@@ -23,9 +23,24 @@ Or install it yourself as:
 
 ## Usage
 
+`Delaunator.triangulate()` returns an array of triangle vertex indices (each group of three numbers forms a triangle). All triangles are directed counterclockwise.
+
 ```ruby
-Delaunator.triangulate([[516, 661], [369, 793], [426, 539]...])
+points = [[382, 302], [382, 328], [382, 205], [623, 175], [382, 188], [382, 284], [623, 87], [623, 341], [141, 227]]
+triangles = Delaunator.triangulate(points)
+# => [2, 3, 4, 2, 5, 3, 5, 7, 3, 3, 6, 4, 0, 7, 5, 1, 7, 0, 0, 8, 1, 5, 8, 0, 2, 8, 5, 4, 8, 2, 6, 8, 4]
 ```
+
+You can then use these indices to get the coordinates of each triangle:
+
+```ruby
+(0..triangles.length-1).step(3) do |i|
+    ax, ay = points[triangles[i]]
+    bx, by = points[triangles[i + 1]]
+    cx, cy = points[triangles[i + 2]]
+    # (ax, ay), (bx, by), (cx, cy) are your triangle points
+```
+
 
 ## Development
 
