@@ -39,7 +39,10 @@ You can then use these indices to get the coordinates of each triangle:
     bx, by = points[triangles[i + 1]]
     cx, cy = points[triangles[i + 2]]
     # (ax, ay), (bx, by), (cx, cy) are your triangle points
+    ...
 ```
+
+![image](https://user-images.githubusercontent.com/19203626/71546247-4c963600-2995-11ea-948f-5fec1d7982ea.png)
 
 
 ## Development
