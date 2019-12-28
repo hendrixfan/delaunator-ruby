@@ -41,9 +41,9 @@ You can then use these indices to get the coordinates of each triangle:
     # (ax, ay), (bx, by), (cx, cy) are your triangle points
     ...
 ```
+After implementing your own render function you can show the edges of the Delaunay triangulation:
 
 ![image](https://user-images.githubusercontent.com/19203626/71546247-4c963600-2995-11ea-948f-5fec1d7982ea.png)
-
 
 ## Development
 
