@@ -13,7 +13,6 @@ module Delaunator
     d.triangulate
     (0..d.halfedges.length - 1).each do |i|
       i2 = d.halfedges[i]
-      #if i2 != -1 && d.halfedges[i2] != i
       raise ArgumentError, "invalid_halfedge #{i}" if i2 != -1 && d.halfedges[i2] != i
     end
     # validate triangulation
@@ -39,7 +38,7 @@ module Delaunator
     end
     triangles_area = triangle_areas.inject(0){ |sum, x| sum + x }
     err = ((hull_area - triangles_area) / hull_area).abs
-    raise ArgumentError, :invalid_triangulation unless err <= 2.pow(-51)
+    raise ArgumentError, :invalid_triangulation unless err <= 2 ** -51
   end
 
   def self.convex(r, q, p)

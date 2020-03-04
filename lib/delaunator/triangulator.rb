@@ -2,7 +2,7 @@ module Delaunator
   class Triangulator
     attr_reader :halfedges, :hull, :triangles, :coords
 
-    EPSILON = 2.pow(-52)
+    EPSILON = 2 ** -52
 
     EDGE_STACK = Array.new(512, 0)
 
